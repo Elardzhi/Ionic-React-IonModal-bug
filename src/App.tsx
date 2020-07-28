@@ -22,13 +22,21 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Page1 from "./pages/page1";
+import Page2 from "./pages/page2";
+import Page3 from './pages/page3';
+import Page4 from "./pages/page4";
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
         <Route path="/home" component={Home} exact={true} />
-        <Route exact path="/" render={() => <Redirect to="/home" />} />
+        <Route path="/page1" component={Page1} exact={true} />
+        <Route path="/page2" component={Page2} exact={true} />
+        <Route path="/page3" component={Page3} exact={true} />
+        <Route path="/page4" component={Page4} exact={true} />
+        <Route exact path="/" render={() => <Redirect to="/page1" />} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
